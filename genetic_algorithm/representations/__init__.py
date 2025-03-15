@@ -1,0 +1,6 @@
+from .base_representation import BaseRepresentation
+from .binary_representation import BinaryRepresentation
+from .real_representation import RealRepresentation
+from .permutation_representation import PermutationRepresentation
+from .tree_representation import TreeRepresentation
+from .neural_net_representation import NeuralNetRepresentation
