@@ -27,7 +27,7 @@ def tree_fitness(individual):
             predicted_value = eval(expression)  # 数式として評価
             error += abs(predicted_value - target_function(x))
         except Exception as e:
-            # print(f"Error evaluating individual: {individual}, error: {e}")
+            print(f"Error evaluating individual: {individual}, error: {e}")
             return -float("inf")  # エラーが発生した場合、大きな誤差を返す
 
     return -error  # 誤差が小さいほど適合度が高い
