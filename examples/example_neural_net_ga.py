@@ -31,7 +31,7 @@ nn_representation = NeuralNetRepresentation(input_size=3, hidden_size=5, output_
 selection = TournamentSelection(tournament_size=3, elitism=2)
 
 ga = GeneticAlgorithm(
-    representation_class=nn_representation,
+    representation_instance=nn_representation,
     pop_size=50,
     selection=selection,
     crossover=BlendCrossoverNN(),

@@ -9,7 +9,7 @@ class GeneticAlgorithm:
 
     def __init__(
         self,
-        representation_class,
+        representation_instance,
         pop_size=20,
         selection=None,
         crossover=None,
@@ -17,14 +17,14 @@ class GeneticAlgorithm:
         fitness_func=None,
     ):
         """
-        :param representation_class: 実際に個体生成や評価を管理するクラス
+        :param representation_instance: 実際に個体生成や評価を管理するクラス
         :param pop_size: 個体数
         :param selection: BaseSelectionを継承したインスタンス
         :param crossover: BaseCrossoverを継承したインスタンス
         :param mutation: BaseMutationを継承したインスタンス
         :param fitness_func: 評価関数(個体を入力にスカラーを返す関数)
         """
-        self.representation_class = representation_class
+        self.representation_instance = representation_instance
         self.pop_size = pop_size
         self.selection = selection
         self.crossover = crossover
@@ -33,7 +33,8 @@ class GeneticAlgorithm:
 
         # 初期集団を生成
         self.population = [
-            self.representation_class.random_individual() for _ in range(self.pop_size)
+            self.representation_instance.random_individual()
+            for _ in range(self.pop_size)
         ]
 
         self.fitness_list = [0] * self.pop_size

@@ -15,7 +15,7 @@ real_representation = RealRepresentation(dimension=5)
 selection = RouletteSelection(elitism=2)
 
 ga = GeneticAlgorithm(
-    representation_class=real_representation,
+    representation_instance=real_representation,
     pop_size=50,
     selection=selection,
     crossover=BlendCrossover(),

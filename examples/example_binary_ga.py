@@ -17,7 +17,7 @@ binary_representation = BinaryRepresentation(length=20)
 selection = TournamentSelection(tournament_size=3, elitism=2)
 
 ga = GeneticAlgorithm(
-    representation_class=binary_representation,
+    representation_instance=binary_representation,
     pop_size=50,
     selection=selection,
     crossover=OnePointCrossover(),

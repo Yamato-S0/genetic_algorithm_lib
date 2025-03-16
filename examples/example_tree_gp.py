@@ -42,7 +42,7 @@ print(f"Terminals in tree_representation: {tree_representation.terminals}")
 selection = TournamentSelection(tournament_size=3, elitism=2)
 
 ga = GeneticAlgorithm(
-    representation_class=tree_representation,
+    representation_instance=tree_representation,
     pop_size=50,
     selection=selection,
     crossover=SubtreeCrossover(),

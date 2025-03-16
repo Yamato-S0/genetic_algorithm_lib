@@ -29,7 +29,7 @@ tsp_representation = PermutationRepresentation(num_elements=num_cities)
 selection = TournamentSelection(tournament_size=3, elitism=2)
 
 ga = GeneticAlgorithm(
-    representation_class=tsp_representation,
+    representation_instance=tsp_representation,
     pop_size=50,
     selection=selection,
     crossover=OrderCrossover(),
