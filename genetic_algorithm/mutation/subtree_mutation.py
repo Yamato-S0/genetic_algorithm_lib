@@ -1,7 +1,4 @@
 import random
-from genetic_algorithm.representations.tree_representation import (
-    TreeRepresentation,
-)
 from .base_mutation import BaseMutation
 
 
@@ -11,8 +8,13 @@ class SubtreeMutation(BaseMutation):
     部分木をランダムに再生成する。
     """
 
-    def __init__(self, mutation_rate=0.1):
+    def __init__(self, mutation_rate=0.1, representation=None):
+        """
+        :param mutation_rate: 突然変異率
+        :param representation: 既存の TreeRepresentation インスタンス
+        """
         self.mutation_rate = mutation_rate
+        self.representation = representation
 
     def mutate(self, individual):
         """
@@ -24,9 +26,7 @@ class SubtreeMutation(BaseMutation):
             if node is None:
                 return None
             if random.random() < self.mutation_rate:
-                return TreeRepresentation(max_depth=3).random_individual(
-                    depth=depth
-                )  # ランダム部分木
+                return self.representation.random_individual(depth=depth)
             node.left = mutate_node(node.left, depth + 1)
             node.right = mutate_node(node.right, depth + 1)
             return node

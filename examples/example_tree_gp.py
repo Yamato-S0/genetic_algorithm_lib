@@ -46,7 +46,7 @@ ga = GeneticAlgorithm(
     pop_size=50,
     selection=selection,
     crossover=SubtreeCrossover(),
-    mutation=SubtreeMutation(mutation_rate=0.05),
+    mutation=SubtreeMutation(mutation_rate=0.05, representation=tree_representation),
     fitness_func=tree_fitness,
 )
 
