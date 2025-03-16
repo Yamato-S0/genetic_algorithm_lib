@@ -6,9 +6,9 @@ from genetic_algorithm.mutation import SubtreeMutation
 from genetic_algorithm.representations.tree_representation import TreeRepresentation
 
 
-# ターゲット関数 難し目
+# ターゲット関数
 def target_function(x):
-    return 2 * x**3 - 3 * x**2 + 4 * x - 1
+    return x**2 + 2 * x + 1
 
 
 def tree_fitness(individual):
