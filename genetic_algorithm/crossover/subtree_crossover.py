@@ -1,5 +1,4 @@
 import random
-from genetic_algorithm.representations.tree_representation import TreeNode
 from .base_crossover import BaseCrossover
 
 
