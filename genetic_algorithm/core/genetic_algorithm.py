@@ -17,7 +17,7 @@ class GeneticAlgorithm:
         fitness_func=None,
     ):
         """
-        :param representation_instance: 実際に個体生成や評価を管理するクラス
+        :param representation_instance: 実際に個体生成や評価を管理するクラスのインスタンス
         :param pop_size: 個体数
         :param selection: BaseSelectionを継承したインスタンス
         :param crossover: BaseCrossoverを継承したインスタンス
